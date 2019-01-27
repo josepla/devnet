@@ -37,18 +37,18 @@ except:
     pass
 
 #Mission TODO1: Please add your SPARK_ACCESS_TOKEN and SPARK_ROOM_ID here
-SPARK_ACCESS_TOKEN = ""
-SPARK_ROOM_ID=""
+SPARK_ACCESS_TOKEN = "NDY2YjgwOTEtZjg3Mi00Y2E4LWI3ZjEtMTE1NzAzNzQ5MjNjYmNhZGRhMWEtZjgy_PF84_ccbec398-7a82-401b-b20e-546a4a686d69"
+SPARK_ROOM_ID="Y2lzY29zcGFyazovL3VzL1JPT00vOGIyOTBmYzAtZmM5OS0xMWU4LWIzOWMtNGI1MTc5NTNmNDA4"
 
 spark = ciscosparkapi.CiscoSparkAPI(SPARK_ACCESS_TOKEN)
 # Mission TODO: Insert the SHA you want to hunt using TG
 
 
-sha_256 = ""
+sha_256 = "3372c1edab46837f1e973164fa2d726c5c5e17bcb888828ccd7c4dfcc234a370"
 
 # Mission TODO: enter the api credentials for the TG API access
 
-api_key = ""
+api_key = "71rph5cu5i1orcumbt39a6rol8"
 
 # intialize  threatgrid objects
 

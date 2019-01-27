@@ -36,8 +36,8 @@ try:
 except:
     pass
 #Mission TODO1: Please add your SPARK_ACCESS_TOKEN and SPARK_ROOM_ID here
-SPARK_ACCESS_TOKEN = ""
-SPARK_ROOM_ID=""
+SPARK_ACCESS_TOKEN = "NDY2YjgwOTEtZjg3Mi00Y2E4LWI3ZjEtMTE1NzAzNzQ5MjNjYmNhZGRhMWEtZjgy_PF84_ccbec398-7a82-401b-b20e-546a4a686d69"
+SPARK_ROOM_ID="Y2lzY29zcGFyazovL3VzL1JPT00vOGIyOTBmYzAtZmM5OS0xMWU4LWIzOWMtNGI1MTc5NTNmNDA4"
 
 spark = ciscosparkapi.CiscoSparkAPI(SPARK_ACCESS_TOKEN)
 headers = {
@@ -50,13 +50,13 @@ auth_payload = '''
 {
   "grant_type": "password",
   "username": "admin",
-  "password": ""
+  "password": "C1sco12345"
 }
 '''
 
 #mission TODO: Enter the FTD hostname/ip here... (TIP: dont't forget to use HTTPS + the IP)
 
-hostname = ""
+hostname = "https://198.18.133.8:443"
 
 def login():
     r = requests.post(hostname + "/api/fdm/v1/fdm/token", data=auth_payload, verify=False, headers=headers)
@@ -76,7 +76,7 @@ def create_url_object(client):
     url_object = client.get_model("URLObject")(type="urlobject")
     url_object.name = "DNEbadguys"
     #Mission TODO: Enter the domain you found malicious or questionable in Umbrella Investigate to block on FTD
-    url_object.url = ""
+    url_object.url = "internetbadguys.com"
     client.URLObject.addURLObject(body=url_object).result()
 
 

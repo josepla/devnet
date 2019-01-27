@@ -35,9 +35,9 @@ try:
 except:
     pass
 #TODO: Enter the key provided by the DNE instructor or your own threatgrid api key
-api_key = ''
+api_key = '71rph5cu5i1orcumbt39a6rol8'
 #TODO: Enter the resource URL
-url =''.format(api_key)
+url ='https://panacea.threatgrid.com/api/v2/iocs/feeds/domains?domain=lamp.troublerifle.bid&api_key={}'.format(api_key)
 try:
     r = requests.get(url)
     status_code = r.status_code

@@ -61,10 +61,10 @@ def fdm_create_network(host,token):
     }
 
     payload = {
-        "name":"PUT_NAME_HERE",
+        "name":"DevNet_Express_Testv2",
         "description":"DevNet Security",
         "subType":"HOST",
-        "value":"5.5.5.5",
+        "value":"2.3.4.5",
         "type":"networkobject"
     }
 

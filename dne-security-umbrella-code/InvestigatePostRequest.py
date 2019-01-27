@@ -6,13 +6,13 @@ import json
 from datetime import datetime
 
 # copy paste API key from previous section within the quotes
-investigate_api_key = "<insert-investigate-api-key-here>"
+investigate_api_key = "dc4fd44f-01b8-43d8-9565-8e8fde8dfbb3"
 
 # URL needed for the domain status and category
 investigate_url = "https://investigate.api.umbrella.com/domains/categorization/"
 
 # domains that will be checked
-domains = ["internetbadguys.com", "cnn.com", "cisco.com"]
+domains = ["internetbadguys.com", "cnn.com", "cisco.com", "pepito.com"]
 
 # put in right format to pass as argument in POST request
 values = str(json.dumps(domains))

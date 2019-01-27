@@ -37,18 +37,20 @@ except:
     pass
 
 #Mission TODO1: Please add your SPARK_ACCESS_TOKEN and SPARK_ROOM_ID here
-SPARK_ACCESS_TOKEN = ""
-SPARK_ROOM_ID=""
+SPARK_ACCESS_TOKEN = "NDY2YjgwOTEtZjg3Mi00Y2E4LWI3ZjEtMTE1NzAzNzQ5MjNjYmNhZGRhMWEtZjgy_PF84_ccbec398-7a82-401b-b20e-546a4a686d69"
+SPARK_ROOM_ID="Y2lzY29zcGFyazovL3VzL1JPT00vOGIyOTBmYzAtZmM5OS0xMWU4LWIzOWMtNGI1MTc5NTNmNDA4"
 
 spark = ciscosparkapi.CiscoSparkAPI(SPARK_ACCESS_TOKEN)
 # Mission TODO2: Insert the API key
-APIkey = ""
+APIkey = "dc4fd44f-01b8-43d8-9565-8e8fde8dfbb3"
 
 # Mission TODO3: Insert the proper URL
 investigateUrl = "https://investigate.api.umbrella.com/domains/categorization/"
+#investigateUrl = "https://investigate.api.umbrella.com/samples/"
+
 
 # Mission TODO3: What is the domain that will be checked?
-domain = "hjhqmbxyinislkkt.1j9r76.top"
+domain = "internetbadguys.com"
 
 # time for timestamp of verdict domain
 time = datetime.now().isoformat()

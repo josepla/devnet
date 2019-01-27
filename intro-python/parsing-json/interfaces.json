@@ -4,7 +4,7 @@
             {
                 "name": "GigabitEthernet1",
                 "type": "iana-if-type:ethernetCsmacd",
-                "enabled": true,
+                "enabled": false,
                 "ietf-ip:ipv4": {
                     "address": [
                         {

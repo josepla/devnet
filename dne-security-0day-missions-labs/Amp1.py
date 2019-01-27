@@ -38,13 +38,14 @@ except:
     pass
 import sys
 #Mission TODO1: Please add your SPARK_ACCESS_TOKEN and SPARK_ROOM_ID here
-SPARK_ACCESS_TOKEN = ""
-SPARK_ROOM_ID=""
+SPARK_ACCESS_TOKEN="NDY2YjgwOTEtZjg3Mi00Y2E4LWI3ZjEtMTE1NzAzNzQ5MjNjYmNhZGRhMWEtZjgy_PF84_ccbec398-7a82-401b-b20e-546a4a686d69"
+#SPARK_ACCESS_TOKEN = "ODUwOGE0ODctYTJiMS00YWZlLTlkYmEtNDE4YjhhZWY4MzNlN2Y5ZTAyNmItZTQ3_PF84_ccbec398-7a82-401b-b20e-546a4a686d69"
+SPARK_ROOM_ID="Y2lzY29zcGFyazovL3VzL1JPT00vOGIyOTBmYzAtZmM5OS0xMWU4LWIzOWMtNGI1MTc5NTNmNDA4"
 spark = ciscosparkapi.CiscoSparkAPI(SPARK_ACCESS_TOKEN)
 
 def getAMP(url):
     try:
-        response = requests.get(url)
+        response = requests.get(url, verify=False)
         # Consider any status other than 2xx an error
         if not response.status_code // 100 == 2:
             return "Error: Unexpected response {}".format(response)
@@ -57,12 +58,13 @@ def getAMP(url):
         return "Error: {}".format(e)
 
 #Mission TODO2:  ENTER YOU CLIENT ID AND AMP API KEY HERE
-client_id = ""
-api_key = ""
+client_id = "7461eab18ae5c73215a5"
+api_key = "397583d8-fbd2-4b9a-82f8-837d14829eea"
 #Mission TODO: Enter the standard AMP event id for type of event for Malware... it is 1107296272
-event_id = ""
+event_id = "1107296272"
 #Mission TODO3: Create the AMP URL
-events_url = "https://{}:{}@api.amp.cisco.com/v1/events".format(client_id,api_key)
+
+events_url = "https://{}:{}@amp.dcloud.cisco.com/v1/events".format(client_id,api_key)
 events1 = getAMP(events_url)
 sha_list= {}
 #print (json.dumps(events1, indent=4, sort_keys=True))

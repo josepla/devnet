@@ -35,13 +35,13 @@ try:
 except:
     pass
 #TODO: Enter the API Key provided by DNE instructor or use your own threatgrid api key
-api_key = ''
+api_key = '71rph5cu5i1orcumbt39a6rol8'
 
 #TODO: Enter from the example given in the learning lab
-SHA256 = ''
+SHA256 = '3b0fa8068f11dc9abf3a4017920ec16303f99999e7276678f19c6b4eecf65287'
 
 #TODO: Enter the request URL, Hint please refer to the intro-threat-grid-api learning lab
-url =''.format(api_key)
+url ='https://panacea.threatgrid.com/api/v2/search/submissions?q=SHA256&api_key={}'.format(api_key)
 try:
     r = requests. #TODO enter the right GET method call on requests. Please refer to other code files in this repo
     #print (r.json())

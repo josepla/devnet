@@ -49,11 +49,11 @@ def get(url):
         return "Error: {}".format(e)
 
 #main code TODO: ENTER YOU CLIENT ID AND API KEY HERE
-client_id = ""
-api_key = ""
+client_id = "7461eab18ae5c73215a5"
+api_key = "397583d8-fbd2-4b9a-82f8-837d14829eea"
 
 #TODO: Enter the specific event you are interested in to find from the result for example malware execute event id is 1107296272
-event_id=
+event_id=1107296257
 
 events_url = "https://{}:{}@amp.dcloud.cisco.com/v1/events".format(client_id,api_key)
 
@@ -61,5 +61,12 @@ events1= get(events_url)
 
 #TODO: Print the entire response
 
+print (json.dumps(events1, indent=4, sort_keys=True))
+
 #TODO: Print the events where Malware executed. You will be using For loop to parse the json in the response
+for events1 in events1["data"]:
+    if events1["event_type_id"] == event_id:
+        print(events1)
+    else:
+        continue
 

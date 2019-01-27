@@ -5,7 +5,7 @@ import requests
 import json
 
 # copy paste API key from previous section within the quotes
-enforcement_api_key = "<insert-enforcement-api-key-here>"
+enforcement_api_key = "0f988977-e125-4ad0-b752-40dd715ed33d"
 
 # URL needed to do GET requests
 domain_url = "https://s-platform.api.opendns.com/1.0/domains"
@@ -25,10 +25,10 @@ while True:
     if bool(json_file["meta"]["next"]):
         Url = json_file["meta"]["next"]
     # break out of loop when finished
-    else:    
+    else:
         break
 
-# error handling if true then the request was HTTP 200, so successful 
+# error handling if true then the request was HTTP 200, so successful
 if(req.status_code == 200):
   print("SUCCESS: the following domain(s) are in your current custom Block List:")
   print(domain_list)

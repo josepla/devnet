@@ -38,8 +38,8 @@ except:
     pass
 
 #Mission TODO1: Please add your SPARK_ACCESS_TOKEN and SPARK_ROOM_ID here
-SPARK_ACCESS_TOKEN = ""
-SPARK_ROOM_ID = ""
+SPARK_ACCESS_TOKEN = "NDY2YjgwOTEtZjg3Mi00Y2E4LWI3ZjEtMTE1NzAzNzQ5MjNjYmNhZGRhMWEtZjgy_PF84_ccbec398-7a82-401b-b20e-546a4a686d69"
+SPARK_ROOM_ID="Y2lzY29zcGFyazovL3VzL1JPT00vOGIyOTBmYzAtZmM5OS0xMWU4LWIzOWMtNGI1MTc5NTNmNDA4"
 
 spark = ciscosparkapi.CiscoSparkAPI(SPARK_ACCESS_TOKEN)
 # import necessary libraries / modules
@@ -48,7 +48,7 @@ from datetime import datetime
 import json
 
 #Mission TODO2: copy paste API key from previous section within the quotes
-custkey = ""
+custkey = "0f988977-e125-4ad0-b752-40dd715ed33d"
 
 # URL needed to do POST requests
 eventurl = "https://s-platform.api.opendns.com/1.0/events"
@@ -57,7 +57,7 @@ eventurl = "https://s-platform.api.opendns.com/1.0/events"
 time = datetime.now().isoformat() 
 
 # domain that will be uploaded
-domain = "hjhqmbxyinislkkt.1j9r76.top"
+domain = "internetbadguys.com"
 
 # URL needed for POST request
 UrlPost = eventurl+'?customerKey='+custkey

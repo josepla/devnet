@@ -49,11 +49,11 @@ def get(url):
         return "Error: {}".format(e)
 
 #main code TODO: ENTER YOU CLIENT ID AND API KEY HERE
-client_id = ""
-api_key = ""
+client_id = "7461eab18ae5c73215a5"
+api_key = "397583d8-fbd2-4b9a-82f8-837d14829eea"
 
 #TODO: Enter the URL
-event_id_url = "https://"
+event_id_url = "https://{}:{}@amp.dcloud.cisco.com/v1/event_types".format(client_id,api_key)
 
 event_ids= get(event_id_url)
 

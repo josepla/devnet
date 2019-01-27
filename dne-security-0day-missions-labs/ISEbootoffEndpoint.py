@@ -37,16 +37,17 @@ except:
     pass
 
 #Mission TODO1: Please add your SPARK_ACCESS_TOKEN and SPARK_ROOM_ID here
-SPARK_ACCESS_TOKEN = ""
-SPARK_ROOM_ID=""
+SPARK_ACCESS_TOKEN = "NDY2YjgwOTEtZjg3Mi00Y2E4LWI3ZjEtMTE1NzAzNzQ5MjNjYmNhZGRhMWEtZjgy_PF84_ccbec398-7a82-401b-b20e-546a4a686d69"
+SPARK_ROOM_ID="Y2lzY29zcGFyazovL3VzL1JPT00vOGIyOTBmYzAtZmM5OS0xMWU4LWIzOWMtNGI1MTc5NTNmNDA4"
 
 spark = ciscosparkapi.CiscoSparkAPI(SPARK_ACCESS_TOKEN)
 
 # Mission TO DO2: Get the ISE URL setup
 
-ISE_ERSUSER=
-ISE_ERSPASSWORD=
-ISE_HOSTNAME=
+ISE_ERSUSER="ersadmin"
+ISE_ERSPASSWORD="C1sco12345"
+ISE_HOSTNAME="198.18.133.27:9060"
+
 
 # Mission Note: You have nothing to do here. But remember this information will come from the AMP (The MAC address of rouge endpoints)
 # currently have only one endpoint registered with ISE in DNE dcloud pod, hence we will use this information only. But in your network
@@ -54,7 +55,7 @@ ISE_HOSTNAME=
 ISE_ENDPOINT="11:22:33:44:55:66"
 
 #Mission TODO 4: Create URL to Get the ANC policy : Hint you have already done this exercise in ISE DNE module
-url = "MISSION"
+url = "https://" + ISE_ERSUSER + ":" + ISE_ERSPASSWORD + "@" + ISE_HOSTNAME + "/ers/config/ancpolicy"
 
 
 headers = {
@@ -69,7 +70,9 @@ namelist={}
 if(response.status_code == 200):
     resp_json = response.json()
     #Mission TODO 6: Parse the json dict using for loop to get Policy name and assign it to "namelist"
-    message = spark.messages.create(SPARK_ROOM_ID,
+    for newlist in resp_json["SearchResult"]["resources"]:
+        namelist=newlist["name"]
+    spark.messages.create(SPARK_ROOM_ID,
     text='MISSION: 0day ISE - I have completed the first mission to get the ISE Policy!')
     #Mission TODO3: Print the response policy name you parsed
 
@@ -79,10 +82,10 @@ else:
         print("An error has ocurred with the following code %(error)s" % {'error': response.status_code})
 
 #Mission TODO 7: Create url to apply policy use this endpoint /ers/config/ancendpoint/apply
-url =
+url = "https://" + ISE_ERSUSER + ":" + ISE_ERSPASSWORD + "@" + ISE_HOSTNAME + "/ers/config/ancendpoint/apply"
 
 #Mission TODO 8: Update the payload with policy name variable you used to parse and store in TODO #6 hint "namelist"
-payload = "{\r\n    \"OperationAdditionalData\": {\r\n    \"additionalData\": [{\r\n    \"name\": \"macAddress\",\r\n    \"value\": \""+ ISE_ENDPOINT + "\"\r\n    },\r\n    {\r\n    \"name\": \"policyName\",\r\n    \"value\": \""+ TODO_UPDATE_ME+ '"' + "\r\n    }]\r\n  }\r\n}"
+payload = "{\r\n    \"OperationAdditionalData\": {\r\n    \"additionalData\": [{\r\n    \"name\": \"macAddress\",\r\n    \"value\": \""+ ISE_ENDPOINT + "\"\r\n    },\r\n    {\r\n    \"name\": \"policyName\",\r\n    \"value\": \""+ namelist + '"' + "\r\n    }]\r\n  }\r\n}"
 
 #you can uncomment these line to quickly check you payload. If payload is not correct ISE will return 400 status code
 #print(payload)
